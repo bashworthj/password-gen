@@ -12,7 +12,7 @@
 
 
 ## Visuals
-![Screen Shot]()
+![Screen Shot](./assests/images/PasswordGenerator.png)
 
 ## Authors and Acknowledgement
 - Ben Ashworth
