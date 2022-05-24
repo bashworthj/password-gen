@@ -12,11 +12,7 @@ var special = "#$%&()*+,-./:;<=>?";
 var specialArray = special.split("");
 var uppercase = lowercase.toUpperCase();
 var upperArray = uppercase.split("");
-var input = "";
-var lower;
-var num;
-var silly; 
-var upper;
+
 
 
 function passGen() {
@@ -39,30 +35,33 @@ function passGen() {
 
     var selectedCriteria = [];
     var results = "";
-
-
+//with the confirm variables set to true i then run if statements
+//if true i take my empty area assigned to variable selected criteria and add corellating arrays.
+  }
     if (lower) {
-      for(var i of lowerArray)
-      selectedCriteria.push(i);
+    
+      selectedCriteria = selectedCriteria.concat(lowerArray);
     } if (num) {
-      for(var i of numberArray)
-      selectedCriteria.push(i);
+     
+      selectedCriteria = selectedCriteria.concat(numberArray);
     } if (silly) {
-      for(var i of specialArray)
-      selectedCriteria.push(i);
+      
+      selectedCriteria = selectedCriteria.concat(specialArray);
     } if (upper) {
-      for(var i of upperArray)
-      selectedCriteria.push(i);
+      
+      selectedCriteria = selectedCriteria.concat(upperArray);
     } if (lower === false && num === false && silly === false && upper === false) {
       alert("One Criteria must be selected to generate your password.");
-    }
+    } console.log(input);
     for (var i = 0; i < input; i++) {
-     results = results + selectedCriteria[Math.floor(Math.random()) * selectedCriteria.length]
+     results += selectedCriteria[Math.floor(Math.random()
+       * selectedCriteria.length)]
 
-      return results;
+      
     }
+    return results;
   }
-}
+
   // Write password to the #password input
   function writePassword() {
     var password = passGen();
